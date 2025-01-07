@@ -37,8 +37,8 @@ SELECT DISTINCT ODRF."DocDate"
 		WHEN OUDP."Name" IS NULL
 			THEN (
 					SELECT Cad_Dep."Name"
-					FROM "SBO_BRW_PRD"."OHEM" Cad_Colaborador
-					INNER JOIN "SBO_BRW_PRD"."OUDP" Cad_Dep ON Cad_Colaborador."dept" = Cad_Dep."Code"
+					FROM "SUA_TABELA"."OHEM" Cad_Colaborador
+					INNER JOIN "SUA_TABELA"."OUDP" Cad_Dep ON Cad_Colaborador."dept" = Cad_Dep."Code"
 					WHERE Cad_Colaborador."empID" = OHEM."empID"
 					)
 		ELSE OUDP."Name"
@@ -64,31 +64,31 @@ SELECT DISTINCT ODRF."DocDate"
 		WHEN (ODRF."ObjType" = '1470000113')
 			THEN CAST((
 						SELECT OPRQ."DocNum"
-						FROM "SBO_BRW_PRD"."OPRQ" OPRQ
+						FROM "SUA_TABELA"."OPRQ" OPRQ
 						WHERE OPRQ."draftKey" = ODRF."DocEntry"
 						) AS NVARCHAR(50))
 		WHEN (ODRF."ObjType" = '22')
 			THEN CAST((
 						SELECT PO."DocNum"
-						FROM "SBO_BRW_PRD"."OPOR" PO
+						FROM "SUA_TABELA"."OPOR" PO
 						WHERE PO."draftKey" = ODRF."DocEntry"
 						) AS NVARCHAR(50))
 		ELSE 'Sem Doc'
 		END AS "Relacionamento"
-FROM "SBO_BRW_PRD"."ODRF" ODRF
-INNER JOIN "SBO_BRW_PRD"."DRF1" DRF1 ON DRF1."DocEntry" = ODRF."DocEntry"
-INNER JOIN "SBO_BRW_PRD"."OITM" OITM ON OITM."ItemCode" = DRF1."ItemCode"
-INNER JOIN "SBO_BRW_PRD"."OWDD" OWDD ON ODRF."DocEntry" = OWDD."DraftEntry"
-INNER JOIN "SBO_BRW_PRD"."WDD1" WDD1 ON OWDD."WddCode" = WDD1."WddCode"
-INNER JOIN "SBO_BRW_PRD"."OWST" OWST ON WDD1."StepCode" = OWST."WstCode"
-INNER JOIN "SBO_BRW_PRD"."WST1" WST1 ON OWST."WstCode" = WST1."WstCode"
+FROM "SUA_TABELA"."ODRF" ODRF
+INNER JOIN "SUA_TABELA"."DRF1" DRF1 ON DRF1."DocEntry" = ODRF."DocEntry"
+INNER JOIN "SUA_TABELA"."OITM" OITM ON OITM."ItemCode" = DRF1."ItemCode"
+INNER JOIN "SUA_TABELA"."OWDD" OWDD ON ODRF."DocEntry" = OWDD."DraftEntry"
+INNER JOIN "SUA_TABELA"."WDD1" WDD1 ON OWDD."WddCode" = WDD1."WddCode"
+INNER JOIN "SUA_TABELA"."OWST" OWST ON WDD1."StepCode" = OWST."WstCode"
+INNER JOIN "SUA_TABELA"."WST1" WST1 ON OWST."WstCode" = WST1."WstCode"
 	AND WST1."UserID" = WDD1."UserID"
-INNER JOIN "SBO_BRW_PRD"."OUSR" OUSR ON WST1."UserID" = OUSR."USERID"
-LEFT JOIN "SBO_BRW_PRD"."OHEM" OHEM ON OHEM."empID" = ODRF."OwnerCode"
-LEFT JOIN "SBO_BRW_PRD"."OUDP" OUDP ON OUDP."Code" = ODRF."Department"
-LEFT JOIN "SBO_BRW_PRD"."POR1" POR1 ON ODRF."DocNum" = POR1."BaseDocNum"
+INNER JOIN "SUA_TABELA"."OUSR" OUSR ON WST1."UserID" = OUSR."USERID"
+LEFT JOIN "SUA_TABELA"."OHEM" OHEM ON OHEM."empID" = ODRF."OwnerCode"
+LEFT JOIN "SUA_TABELA"."OUDP" OUDP ON OUDP."Code" = ODRF."Department"
+LEFT JOIN "SUA_TABELA"."POR1" POR1 ON ODRF."DocNum" = POR1."BaseDocNum"
 	AND POR1."ItemCode" = DRF1."ItemCode"
-LEFT JOIN "SBO_BRW_PRD"."OPOR" OPOR ON POR1."DocEntry" = OPOR."DocEntry"
+LEFT JOIN "SUA_TABELA"."OPOR" OPOR ON POR1."DocEntry" = OPOR."DocEntry"
 WHERE (
 		ODRF."DocDate" BETWEEN [%0]
 			AND [%1]
