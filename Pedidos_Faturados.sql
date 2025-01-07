@@ -88,8 +88,8 @@ SELECT T0."DocType" AS "Tipo de documento"
 	,T0."BaseEntry" "Chave interna do documento base"
 	,T0."BaseLine"
 	,T0."BaseRef"
-FROM "CVA_FATURAMENTO" T0
-LEFT JOIN "VW_PortalCVA_CondicaoPagamento_PrazoMedio" T1 ON T0."GroupNum" = T1."CODIGO"
+FROM "SUA_TABELA" T0
+LEFT JOIN "SUA_TABELA" T1 ON T0."GroupNum" = T1."CODIGO"
 WHERE 0 = 0
 	AND T0."DocDate" >= [%0]
 	AND T0."DocDate" <= [%1]
