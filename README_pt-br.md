@@ -1,3 +1,5 @@
+[![en](https://img.shields.io/badge/lang-en-red.svg)]() [![pt-br](https://img.shields.io/badge/lang-pt--br-green.svg)]()  
+
 # **Consultas SQL para Banco de Dados Empresarial - SAP B1** 🗄️
 
 Este repositório contém diversas consultas SQL otimizadas para o banco de dados empresarial do SAP Business One. As consultas aqui disponibilizadas abrangem diferentes tópicos relevantes para a gestão empresarial, como cadastro de fornecedores, produtos, vendedores, análise de pedidos e processos de compras.
