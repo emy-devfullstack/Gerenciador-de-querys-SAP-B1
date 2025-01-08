@@ -1,4 +1,5 @@
-[![en](https://img.shields.io/badge/lang-en-red.svg)]() [![pt-br](https://img.shields.io/badge/lang-pt--br-green.svg)]()  
+[![en](https://img.shields.io/badge/lang-en-red.svg)](https://github.com/emy-devfullstack/Gerenciador-de-querys-SAP-B1/blob/main/README.md) [![pt-br](https://img.shields.io/badge/lang-pt--br-green.svg)](https://github.com/emy-devfullstack/Gerenciador-de-querys-SAP-B1/blob/main/README_pt-br.md)  
+
 
 # **Consultas SQL para Banco de Dados Empresarial - SAP B1** 🗄️
 
