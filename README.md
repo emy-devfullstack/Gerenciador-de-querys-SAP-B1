@@ -19,7 +19,7 @@ The queries were created to facilitate the extraction of important information f
 ## **📂 Available Queries**
 
 - `📌 Cad_fornecedores.sql`: Detailed information about suppliers.
-- `📦 Cad_produtos.sql`: Details of the product registry.
+- `📦 Dados_produtos.sql`: Details of the product registry.
 - `🧑‍💼 Codigo-vendedores.sql`: Vendor list.
 - `📈 Pedidos_Faturados.sql`: Data on invoiced orders.
 - `📋 Pedidos_em_carteira.sql`: Open orders.
