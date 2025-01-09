@@ -20,7 +20,7 @@ As consultas foram criadas para facilitar a extração de informações importan
 ## **📂 Consultas Disponíveis**
 
 - `📌 Cad_fornecedores.sql`: Informações detalhadas sobre fornecedores.
-- `📦 Cad_produtos.sql`: Detalhes do cadastro de produtos.
+- `📦 Dados_produtos.sql`: Detalhes do cadastro de produtos.
 - `🧑‍💼 Codigo-vendedores.sql`: Lista de vendedores.
 - `📈 Pedidos_Faturados.sql`: Dados de pedidos faturados.
 - `📋 Pedidos_em_carteira.sql`: Pedidos em aberto.
