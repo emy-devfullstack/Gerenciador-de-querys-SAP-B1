@@ -41,6 +41,7 @@ SELECT DISTINCT
     T0."U_ItemSubstituto",
     T0."U_MotivoSubstituicao",
 
+    -- SKU
     CASE
         WHEN T0."BuyUnitMsr" = 'Pacote' THEN 'PCT'
         WHEN T0."BuyUnitMsr" = 'Caixa' THEN 'CX'
@@ -91,6 +92,8 @@ SELECT DISTINCT
     T0."BVolume" AS "Volume (CUBAGEM)",
     T0."BWeight1" AS "Peso de Compra (PESO LÍQUIDO)",
     T0."SWeight1" AS "Peso de Venda (PESO BRUTO)"
+    T0."U_QdeInner",
+    T0."U_QdeMaster"
     
 FROM OITM T0
 LEFT JOIN OITB T1
